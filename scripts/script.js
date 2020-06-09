@@ -12,6 +12,12 @@ document.querySelector('form').addEventListener('submit', function (evnt) {
   newThingToDo.value = '';
 });
 
+function resetLists() {
+  // remove all items from the 2 lists
+  document.querySelector('#listtodo').removeChild();
+  document.querySelector('#listdone').removeChild();
+}
+
 function addToList(task, done) {
   // define the PARENT list item
   const myList = done
