@@ -57,12 +57,12 @@ function addToList(task, done) {
     console.log(todoArray);
     // then change the data
     // find out which index of the array will be modified
-    for (let index = 0; index < todoArray.length; index++) {
-      // by comparing the task string
-      // there is no other way to ID the task !
-      if (task === todoArray[index].task) {
-        todoArray[index].done = inputHTML.checked;
-      }
-    }
+    // for (let index = 0; index < todoArray.length; index++) {
+    //   // by comparing the task string
+    //   // there is no other way to ID the task !
+    //   if (task === todoArray[index].task) {
+    //     todoArray[index].done = inputHTML.checked;
+    //   }
+    // }
   });
 }
