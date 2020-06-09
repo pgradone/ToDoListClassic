@@ -42,9 +42,9 @@ function addToList(task, done) {
   inputHTML.addEventListener('click', function () {
     // spanHTML.style.textDecoration = this.checked ? "line-through" : "";
     for (let index = 0; index < todoArray.length; index++) {
-      const element = todoArray[index].task;
-      if (element.indexOf(task)) {
-        todoArray[index].done = !inputHTML.checked;
+      // const element = todoArray[index].task;
+      if (task === todoArray[index].task) {
+        todoArray[index].done = inputHTML.checked;
       }
     }
     console.log(todoArray);
