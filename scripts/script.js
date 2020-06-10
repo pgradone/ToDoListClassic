@@ -2,11 +2,11 @@ refreshHTMLlists();
 
 document.querySelector("form").addEventListener("submit", function (evnt) {
   evnt.preventDefault();
-  const newThingToDo = document.querySelector("#newthing");
-  addToList(newThingToDo.value, false);
-  todoArray.push({ done: false, task: newThingToDo.value });
+  const newTaskValue = document.querySelector("#newthing").value;
+  const newTask = { done: false, task: newTaskValue };
+  addToList(newThingToDo, false);
+  todoArray.push(newTask);
   console.log(todoArray);
-  newThingToDo.value = "";
   refreshHTMLlists();
 });
 
