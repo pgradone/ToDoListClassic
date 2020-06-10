@@ -42,6 +42,21 @@ function addToList(task, done) {
   liHTML.append(spanHTML);
   // set 'line-through' style to the span text (if done), otherwise none
   spanHTML.style.textDecoration = done ? 'line-through' : '';
+  // create and add a Delete button with its eventlistener
+  const deleteHTMLbutton = document.createElement('input');
+  liHTML.append(deleteHTMLbutton);
+  deleteHTMLbutton.type = 'submit';
+  deleteHTMLbutton.value = '  x  ';
+  deleteHTMLbutton.addEventListener('click', function () {
+    // by comparing the task string
+    // there is no other way to ID the task !
+    for (let index = 0; index < todoArray.length; index++) {
+      if (task === todoArray[index].task) {
+        todoArray.splice(index, 1);
+      }
+    }
+    refreshHTMLlists();
+  });
   // Make sure to update the task when the user clicks on the checkbox.
   // add 'click' event listener to input item by calling function
   inputHTML.addEventListener('click', function () {

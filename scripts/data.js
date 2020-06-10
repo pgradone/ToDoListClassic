@@ -7,4 +7,9 @@ let todoArray = [
   { done: true, task: 'show list to Guiherme' },
   { done: false, task: 'do the bonus' },
   { done: false, task: 'implement CRUD method' },
+  {
+    done: false,
+    task:
+      'ask Igor how to find out which index of the array to move or delete without looping',
+  },
 ];
