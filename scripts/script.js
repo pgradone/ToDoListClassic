@@ -3,10 +3,11 @@ refreshHTMLlists();
 document.querySelector("form").addEventListener("submit", function (evnt) {
   evnt.preventDefault();
   const newThingToDo = document.querySelector("#newthing");
-  //   addToList(newThingToDo.value, false);
+  addToList(newThingToDo.value, false);
   todoArray.push({ done: false, task: newThingToDo.value });
   console.log(todoArray);
   newThingToDo.value = "";
+  refreshHTMLlists();
 });
 
 function refreshHTMLlists() {
