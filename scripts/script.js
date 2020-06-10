@@ -4,7 +4,7 @@ document.querySelector("form").addEventListener("submit", function (evnt) {
   evnt.preventDefault();
   const newTaskValue = document.querySelector("#newthing").value;
   const newTask = { done: false, task: newTaskValue };
-  addToList(newThingToDo, false);
+  addToList(newTaskValue, false);
   todoArray.push(newTask);
   console.log(todoArray);
   refreshHTMLlists();
@@ -44,23 +44,15 @@ function addToList(task, done) {
   // Make sure to update the task when the user clicks on the checkbox.
   // add 'click' event listener to input item by calling function
   inputHTML.addEventListener("click", function () {
-  //   // change the GUI
-  //   spanHTML.style.textDecoration = this.checked ? "line-through" : "";
-  //   const elementToSwitch = this.parentElement.cloneNode(true);
-  //   const nextList = this.checked
-  //     ? document.querySelector("#listdone")
-  //     : document.querySelector("#listtodo");
-  //   nextList.append(elementToSwitch);
-  //   this.parentElement.remove();
-  //   console.log(todoArray);
-    // then change the data
+    // change the data
     // find out which index of the array will be modified
-  for (let index = 0; index < todoArray.length; index++) {
-   // by comparing the task string
-   // there is no other way to ID the task !
-  /   if (task === todoArray[index].task) {
-    //     todoArray[index].done = inputHTML.checked;
-    //   }
-    // }
+    for (let index = 0; index < todoArray.length; index++) {
+      // by comparing the task string
+      // there is no other way to ID the task !
+      if (task === todoArray[index].task) {
+        todoArray[index].done = inputHTML.checked;
+      }
+    }
+    refreshHTMLlists();
   });
 }
