@@ -12,8 +12,8 @@ document.querySelector("form").addEventListener("submit", function (evnt) {
 
 function refreshHTMLlists() {
   // remove all items from the 2 lists
-  document.querySelector("#listtodo").removeChild();
-  document.querySelector("#listdone").removeChild();
+  document.querySelector("#listtodo").innerHTML = "";
+  document.querySelector("#listdone").innerHTML = "";
   // add all data of the Array to the list
   for (const todoData of todoArray) {
     addToList(todoData.task, todoData.done);
@@ -47,24 +47,24 @@ function addToList(task, done) {
   spanHTML.style.textDecoration = done ? "line-through" : "";
   // Make sure to update the task when the user clicks on the checkbox.
   // add 'click' event listener to input item by calling function
-  inputHTML.addEventListener("click", function () {
-    // change the GUI
-    spanHTML.style.textDecoration = this.checked ? "line-through" : "";
-    const elementToSwitch = this.parentElement.cloneNode(true);
-    const nextList = this.checked
-      ? document.querySelector("#listdone")
-      : document.querySelector("#listtodo");
-    nextList.append(elementToSwitch);
-    this.parentElement.remove();
-    console.log(todoArray);
-    // then change the data
-    // find out which index of the array will be modified
-    // for (let index = 0; index < todoArray.length; index++) {
-    //   // by comparing the task string
-    //   // there is no other way to ID the task !
-    //   if (task === todoArray[index].task) {
-    //     todoArray[index].done = inputHTML.checked;
-    //   }
-    // }
-  });
+  // inputHTML.addEventListener("click", function () {
+  //   // change the GUI
+  //   spanHTML.style.textDecoration = this.checked ? "line-through" : "";
+  //   const elementToSwitch = this.parentElement.cloneNode(true);
+  //   const nextList = this.checked
+  //     ? document.querySelector("#listdone")
+  //     : document.querySelector("#listtodo");
+  //   nextList.append(elementToSwitch);
+  //   this.parentElement.remove();
+  //   console.log(todoArray);
+  //   // then change the data
+  //   // find out which index of the array will be modified
+  //   // for (let index = 0; index < todoArray.length; index++) {
+  //   //   // by comparing the task string
+  //   //   // there is no other way to ID the task !
+  //   //   if (task === todoArray[index].task) {
+  //   //     todoArray[index].done = inputHTML.checked;
+  //   //   }
+  //   // }
+  // });
 }
