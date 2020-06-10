@@ -10,7 +10,7 @@ body {
   background-color: #acb3da;
 }
 
-#list {
+#listtodo, #listdone {
   list-style: none;
 }
 
